@@ -1,0 +1,203 @@
+:root {
+    /* Variáveis de CSS para facilitar a manutenção */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --cor-fundo: #ffffff;
+    --cor-texto: #030303;
+    --cor-container: #6fa5eb;
+    --sombra-container: rgba(0, 0, 0, 0.1);
+    --cor-titulo: #ffffff;
+    --cor-introducao: #f9f9f9;
+    --cor-borda-introducao: #eee;
+    --cor-texto-introducao: #555;
+    --cor-card-pet: #fff;
+    --cor-borda-card-pet: #ddd;
+    --sombra-card-pet: rgba(0, 0, 0, 0.05);
+    --sombra-hover-card-pet: rgba(0, 0, 0, 0.1);
+    --cor-titulo-card-pet: #000000;
+    --cor-texto-card-pet: #666;
+    --cor-negrito-card-pet: #444;
+    --cor-processo-adocao: #f9f9f9;
+    --cor-borda-processo-adocao: #eee;
+    --cor-texto-processo-adocao: #555;
+    --cor-lista-processo-adocao: #666;
+    --cor-formulario: #fff;
+    --cor-borda-formulario: #ddd;
+    --sombra-formulario: rgba(0, 0, 0, 0.05);
+    --cor-label-formulario: #444;
+    --cor-borda-input-formulario: #ccc;
+    --cor-botao-formulario: #5cb85c;
+    --cor-hover-botao-formulario: #4cae4c;  
+}
+
+body {
+    font-family: var(--fonte-principal); 
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--cor-container);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--sombra-container);
+}
+
+h2 {
+    color: var(--cor-titulo);
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Introdução */
+.introducao {
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-introducao);
+    border-radius: 6px;
+    border: 1px solid var(--cor-borda-introducao);
+}
+
+.introducao p {
+    color: var(--cor-texto-introducao);
+    line-height: 1.8;
+}
+
+/* Cards de Pets */
+.pet-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.pet-card {
+    background-color: var(--cor-card-pet);
+    border: 1px solid var(--cor-borda-card-pet);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px var(--sombra-card-pet);
+    transition: transform 0.2s ease-in-out;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--sombra-hover-card-pet);
+}
+
+.pet-card h3 {
+    color: var(--cor-titulo-card-pet);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.pet-card p {
+    color: var(--cor-texto-card-pet);
+    margin-bottom: 8px;
+}
+
+.pet-card strong {
+    font-weight: bold;
+    color: var(--cor-negrito-card-pet);
+}
+
+/* Processo de Adoção */
+.processo-adocao {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--cor-processo-adocao);
+    border-radius: 6px;
+    border: 1px solid var(--cor-borda-processo-adocao);
+}
+
+.processo-adocao h2 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.processo-adocao p {
+    color: var(--cor-texto-processo-adocao);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.processo-adocao ol {
+    padding-left: 25px;
+    color: var(--cor-lista-processo-adocao);
+}
+
+.processo-adocao ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Formulário de Adoção */
+.formulario-adocao {
+    background-color: var(--cor-formulario);
+    border: 1px solid var(--cor-borda-formulario);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 1px 3px var(--sombra-formulario);
+}
+
+.formulario-adocao h2 {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-label-formulario);
+}
+
+.grupo-formulario input[type="text"],
+.grupo-formulario input[type="email"],
+.grupo-formulario input[type="tel"],
+.grupo-formulario select {
+    width: calc(100% - 18px);
+    padding: 10px;
+    border: 1px solid var(--cor-borda-input-formulario);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.grupo-formulario select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 16px;
+}
+
+.grupo-formulario button {
+    background-color: var(--cor-botao-formulario);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.grupo-formulario button:hover {
+    background-color: var(--cor-hover-botao-formulario);
+}
