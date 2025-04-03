@@ -1,39 +1,42 @@
 :root {
-    /* Variáveis de CSS para facilitar a manutenção */
+    
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --cor-fundo: #ffffff;
-    --cor-texto: #030303;
-    --cor-container: #6fa5eb;
-    --sombra-container: rgba(0, 0, 0, 0.1);
-    --cor-titulo: #ffffff;
-    --cor-introducao: #f9f9f9;
+    --cor-texto: #000000;
+    --cor-container: #df6831;
     --cor-borda-introducao: #eee;
-    --cor-texto-introducao: #555;
-    --cor-card-pet: #fff;
-    --cor-borda-card-pet: #ddd;
-    --sombra-card-pet: rgba(0, 0, 0, 0.05);
-    --sombra-hover-card-pet: rgba(0, 0, 0, 0.1);
-    --cor-titulo-card-pet: #000000;
-    --cor-texto-card-pet: #666;
-    --cor-negrito-card-pet: #444;
-    --cor-processo-adocao: #f9f9f9;
+
+/* Processo Adoção */
+    --cor-titulo-procedimentos: #000000; /*como adotar */
+    --cor-processo-adocao: #ffffff;
     --cor-borda-processo-adocao: #eee;
-    --cor-texto-processo-adocao: #555;
-    --cor-lista-processo-adocao: #666;
+    --cor-texto-processo-adocao: #494545;
+    --cor-lista-processo-adocao: #000000;
+
+
+/* PET-CARD */
+    --cor-card-pet: #fff;
+    --sombra-card-pet: rgba(19, 104, 126, 0.05);
+    --cor-nome-card-pet: #000000;
+    --cor-descricao-card-pet: #2b2b2b;
+    --cor-negrito-card-pet: #000000;
+    --sombra-hover-card-pet: rgba(226, 12, 12, 0.1);
+    
+
+
+/* Formulário */
     --cor-formulario: #fff;
     --cor-borda-formulario: #ddd;
     --sombra-formulario: rgba(0, 0, 0, 0.05);
     --cor-label-formulario: #444;
     --cor-borda-input-formulario: #ccc;
-    --cor-botao-formulario: #5cb85c;
-    --cor-hover-botao-formulario: #4cae4c;  
+    --cor-botao-formulario: #dd6d22;
+    --cor-hover-botao-formulario: #e00a0a;  
 }
 
 body {
     font-family: var(--fonte-principal); 
     margin: 0;
     padding: 0;
-    background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
 }
@@ -53,7 +56,6 @@ body {
 }
 
 h2 {
-    color: var(--cor-titulo);
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
@@ -64,53 +66,15 @@ h2 {
     margin-bottom: 40px;
     text-align: center;
     padding: 20px;
-    background-color: var(--cor-introducao);
     border-radius: 6px;
     border: 1px solid var(--cor-borda-introducao);
 }
 
 .introducao p {
-    color: var(--cor-texto-introducao);
     line-height: 1.8;
 }
 
-/* Cards de Pets */
-.pet-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
 
-.pet-card {
-    background-color: var(--cor-card-pet);
-    border: 1px solid var(--cor-borda-card-pet);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 1px 3px var(--sombra-card-pet);
-    transition: transform 0.2s ease-in-out;
-}
-
-.pet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px var(--sombra-hover-card-pet);
-}
-
-.pet-card h3 {
-    color: var(--cor-titulo-card-pet);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.pet-card p {
-    color: var(--cor-texto-card-pet);
-    margin-bottom: 8px;
-}
-
-.pet-card strong {
-    font-weight: bold;
-    color: var(--cor-negrito-card-pet);
-}
 
 /* Processo de Adoção */
 .processo-adocao {
@@ -141,6 +105,45 @@ h2 {
     margin-bottom: 10px;
     line-height: 1.6;
 }
+
+/* Cards de Pets */
+.pet-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.pet-card {
+    background-color: var(--cor-card-pet);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px var(--sombra-card-pet);
+    transition: transform 0.2s ease-in-out;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px var(--sombra-hover-card-pet);
+}
+
+.pet-card h3 {
+    color: var(--cor-nome-card-pet);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.pet-card p {
+    color: var(--cor-descricao-card-pet);
+    margin-bottom: 8px;
+}
+
+.pet-card strong {
+    font-weight: bold;
+    color: var(--cor-negrito-card-pet);
+}
+
+
 
 /* Formulário de Adoção */
 .formulario-adocao {
@@ -181,7 +184,6 @@ h2 {
 
 .grupo-formulario select {
     appearance: none;
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
     background-size: 16px;
