@@ -1,297 +1,152 @@
-:root {
-    /* Cores Principais */
-    --cor-principal: #f47c57; /* Laranja vibrante */
-    --cor-secundaria: #a8dadc; /* Azul claro */
-    --cor-terciaria: #457b9d; /* Azul mais escuro */
-    --cor-fundo: #f9f9f9;
-    --cor-fundo-destaque: #e0fbfc; /* Azul bem claro para seções de destaque */
-    --cor-texto: #333;
-    --cor-texto-secundario: #555;
-    --cor-link: #457b9d;
-    --cor-link-hover: #1d3557;
-    --cor-alerta: #e63946;
-    --cor-sucesso: #2a9d8f;
-
-    /* Cores para a Introdução */
-    --cor-fundo-introducao: var(--cor-principal);
-    --cor-texto-introducao: #fff;
-    --sombra-introducao: rgba(0, 0, 0, 0.1);
-
-    /* Cores para os Cards */
-    --cor-fundo-card: #fff;
-    --sombra-card: rgba(0, 0, 0, 0.08);
-    --sombra-hover-card: rgba(0, 0, 0, 0.15);
-    --cor-titulo-card: var(--cor-principal);
-    --cor-texto-card: #666;
-    --cor-negrito-card: #333;
-
-    /* Cores para Botões */
-    --cor-botao-formulario: var(--cor-principal);
-    --cor-texto-botao-formulario: #fff;
-    --cor-hover-botao-formulario: #e4583b;
-    --cor-botao-secundario: var(--cor-secundaria);
-    --cor-texto-botao-secundario: #fff;
-    --cor-hover-botao-secundario: #8ac4d3;
-
-    /* Cores para o Rodapé */
-    --cor-fundo-rodape: #333;
-    --cor-texto-rodape: #eee;
-
-    /* Fontes */
-    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --fonte-secundaria: 'Arial', sans-serif;
-
-    /* Outros Valores */
-    --borda-arredondada: 8px;
-    --espacamento-padrao: 15px;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resgacti - Adote um Amigo!</title>
+<link rel="stylesheet" href="pet.care.css">
+<link rel="stylesheet" href="./css/style.css"> <link rel="stylesheet"></head>
 
 
-body {
-    font-family: var(--fonte-principal);
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-    box-sizing: border-box;
-}
+<body>
+<div class="container">
+<header class="introducao">
+<div class="introducao-conteudo">
+<h1 id="logo">Resgacti</h1>
+<p class="mensagem-boas-vindas">Um lar para cada patinha, um coração para cada ronronar.</p>
+<p>A Resgacti nasceu do amor incondicional pelos animais. Nossa missão é resgatar, cuidar e encontrar lares amorosos para pets abandonados, oferecendo-lhes uma segunda chance de felicidade. Acreditamos que cada adoção transforma vidas, tanto a do animal quanto a da família que o recebe.</p>
+<div class="cta-adote">
+<a href="#pets-disponiveis" class="botao-principal">Conheça nossos pets para adoção</a>
+<p>Se você não pode adotar agora, considere fazer uma <a href="#doe" class="link-doe">doação</a> para nos ajudar a continuar nosso trabalho.</p>
+</div>
+</div>
+<div class="introducao-imagem">
+<img src="img/logo (1).jpg" alt="Cachorro e gato juntos" width="400">
+</div>
+</header>
 
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: var(--borda-arredondada);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    <section class="nossa-missao">
+        <h2>Nossa Missão</h2>
+        <div class="carousel-missao">
+            <div class="card-missao">
+                <i class="Resgate"></i>
+                <h3>Resgate com Amor</h3>
+                <p>Resgatamos animais em situação de vulnerabilidade, oferecendo os primeiros cuidados e um ambiente seguro.</p>
+            </div>
+            <div class="card-missao">
+                <i class="Saude"></i>
+                <h3>Saúde e Bem-Estar</h3>
+                <p>Garantimos que cada animal receba atenção veterinária completa, incluindo vacinação e castração.</p>
+            </div>
+            <div class="card-missao">
+                <i class="lar"></i>
+                <h3>Lar Temporário</h3>
+                <p>Proporcionamos um lar temporário cheio de carinho e cuidado até que encontrem suas famílias definitivas.</p>
+            </div>
+            <div class="card-missao">
+                <i class="Adocao"></i>
+                <h3>Adoção Responsável</h3>
+                <p>Promovemos a adoção consciente, buscando lares que ofereçam amor e responsabilidade a longo prazo.</p>
+            </div>
+            </div>
+    </section>
 
-h1, h2 {
-    color: var(--cor-principal);
-    text-align: center;
-    margin-bottom: 25px;
-}
+    <section id="pets-disponiveis" class="pets-para-adocao">
+        <h2>Conheça Nossos Amigos</h2>
+        <div class="pet-cards-container">
+            <div class="carousel-pet">
+            
+                <p>Bia</p>
+                <img src="img.index/bia.jpg" alt="Bia">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Pequeno</p>
+                    <p><strong>Idade:</strong> 8 anos</p>
+                    <p><strong>Temperamento:</strong> Calma, carinhosa</p>
+               </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Martin</p>
+                <img src="./img.index/martin.jpg" alt="Martin">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Pequeno</p>
+                    <p><strong>Idade:</strong> 3 anos</p>
+                    <p><strong>Temperamento:</strong> Alegre, brincalhão</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Cristina</p>
+                <img src="img.index/cristina.jpg" alt="Cristina">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Médio</p>
+                    <p><strong>Idade:</strong> 10 anos</p>
+                    <p><strong>Temperamento:</strong> Tranquila, leal</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Milk</p>
+                <img src="./img.index/milk.jpg" alt="Milk">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Pequeno</p>
+                    <p><strong>Idade:</strong> 12 anos</p>
+                    <p><strong>Temperamento:</strong> Doce, companheira</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Thobias</p>
+                <img src="./img.index/thobias.jpg" alt="Thobias">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Grande</p>
+                    <p><strong>Idade:</strong> 5 anos</p>
+                    <p><strong>Temperamento:</strong> Enérgico, divertido</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Vitor</p>
+                <img src="./img.index/vitor.jpg" alt="Vitor">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Médio</p>
+                    <p><strong>Idade:</strong> 7 anos</p>
+                    <p><strong>Temperamento:</strong> Amigável, sociável</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Almodenga</p>
+                <img src="img.index/almondega.jpg" alt="Almodenga">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Pequeno</p>
+                    <p><strong>Idade:</strong> 9 anos</p>
+                    <p><strong>Temperamento:</strong> Carinhosa, caseira</p>
+                </div>
+            </div>
+            <div class="carousel-pet">
+                <p>Alfredo</p>
+                <img src="./img.index/alfredo.jpg" alt="Alfredo">
+                <div class="descricao">
+                    <p><strong>Porte:</strong> Médio</p>
+                    <p><strong>Idade:</strong> 6 anos</p>
+                    <p><strong>Temperamento:</strong> Inteligente, curioso</p>
+                </div>
 
-h3 {
-    color: var(--cor-titulo-card);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
+            </div>
+        </div>
+    </section>
 
-p {
-    margin-bottom: var(--espacamento-padrao);
-}
-
-a {
-    text-decoration: none;
-    color: var(--cor-link);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--cor-link-hover);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--borda-arredondada);
-    margin-bottom: 10px;
-}
-
-.introducao {
-    background-color: var(--cor-fundo-introducao);
-    color: var(--cor-texto-introducao);
-    padding: 40px;
-    margin-bottom: 40px;
-    border-radius: var(--borda-arredondada);
-    box-shadow: var(--sombra-introducao);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-
-#logo {
-    font-size: 2.5em;
-    margin-bottom: var(--espacamento-padrao);
-    text-align: left;
-}
-
-.introducao .mensagem-boas-vindas {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.introducao p {
-    font-size: 1em;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.cta-adote {
-    margin-top: 30px;
-}
-
-.botao-principal {
-    display: inline-block;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-botao-formulario);
-    padding: 15px 30px;
-    border-radius: var(--borda-arredondada);
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.botao-principal:hover {
-    background-color: var(--cor-hover-botao-formulario);
-}
-
-.link-doe {
-    color: var(--cor-principal);
-    text-decoration: underline;
-}
-
-.link-doe:hover {
-    text-decoration: none;
-}
-
-.introducao-imagem {
-    flex-shrink: 0;
-    border-radius: var(--borda-arredondada);
-    overflow: hidden;
-}
-
-.nossa-missao {
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.carousel-missao {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.carousel-missao::-webkit-scrollbar {
-    display: none;
-}
-
-.card-missao {
-    background-color: var(--cor-fundo-card);
-    border-radius: var(--borda-arredondada);
-    padding: 20px;
-    box-shadow: 0 2px 4px var(--sombra-card);
-    min-width: 250px;
-    text-align: center;
-}
-
-.card-missao i {
-    font-size: 2em;
-    color: var(--cor-principal);
-    margin-bottom: var(--espacamento-padrao);
-}
-
-.card-missao h3 {
-    color: var(--cor-principal);
-    margin-bottom: 10px;
-}
+    </div>
+</section>
 
 
-.pets-para-adocao {
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-}
+    <div class="link-para-adocao">
+        <p>Quer saber mais sobre o processo? <a href="adocao.html">Clique aqui e veja como adotar um amigo!</a></p>
+    </div>
 
-.pet-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
+    <footer class="rodape">
+        <div class="links-rodape">
+            <a href="https://www.instagram.com/ongresgacti/">Sobre Nós</a>
+            <a href="#">Como Ajudar</a>
+            <a href="#">Doações</a>
+        </div>
+        <p>&copy; 2025 Resgacti - Unidos pelos Animais</p>
+    </footer>
+</div>
 
-.pet-card {
-    background-color: var(--cor-fundo-card);
-    border-radius: var(--borda-arredondada);
-    padding: 20px;
-    box-shadow: 0 2px 4px var(--sombra-card);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: center;
-}
-
-.pet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px var(--sombra-hover-card);
-}
-
-.pet-card .descricao {
-    color: var(--cor-texto-card);
-    margin-bottom: 12px;
-}
-
-.pet-card strong {
-    font-weight: bold;
-    color: var(--cor-negrito-card);
-}
-
-.botao-adocao {
-    display: inline-block;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-botao-secundario);
-    padding: 10px 20px;
-    border-radius: var(--borda-arredondada);
-    font-weight: bold;
-    margin-top: var(--espacamento-padrao);
-    transition: background-color 0.3s ease;
-}
-
-
-.link-para-adocao {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: var(--cor-fundo-destaque);
-    border-radius: var(--borda-arredondada);
-}
-
-.link-para-adocao p {
-    font-size: 1.1em;
-}
-
-.rodape {
-    background-color: var(--cor-fundo-rodape);
-    color: var(--cor-texto-rodape);
-    text-align: center;
-    padding: 20px;
-    border-radius: 0 0 var(--borda-arredondada) var(--borda-arredondada);
-}
-
-
-
-@media (max-width: 768px) {
-    .introducao {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .introducao-conteudo {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    #logo {
-        text-align: center;
-    }
-
-    .pet-cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
+</html>
