@@ -1,325 +1,217 @@
 :root {
-    /* Cores Principais */
-    --cor-principal: #f47c57; /* Laranja vibrante */
-    --cor-secundaria: #a8dadc; /* Azul claro */
-    --cor-terciaria: #457b9d; /* Azul mais escuro */
-    --cor-fundo: #f9f9f9;
-    --cor-fundo-destaque: #e0fbfc; /* Azul bem claro para seções de destaque */
-    --cor-texto: #333;
-    --cor-texto-secundario: #555;
-    --cor-link: #457b9d;
-    --cor-link-hover: #1d3557;
-    --cor-alerta: #e63946;
-    --cor-sucesso: #2a9d8f;
+  
+  --cor-principal: #f47c57;
+  --cor-secundaria: #a8dadc;
+  --cor-terciaria: #457b9d;
+  --cor-fundo: #f9f9f9;
+  --cor-fundo-destaque: #e0fbfc;
+  --cor-texto: #333;
+  --cor-texto-secundario: #555;
+  --cor-link: #457b9d;
+  --cor-link-hover: #1d3557;
+  --cor-alerta: #e63946;
+  --cor-sucesso: #2a9d8f;
 
-    /* Cores para a Introdução */
-    --cor-fundo-introducao: var(--cor-principal);
-    --cor-texto-introducao: #fff;
-    --sombra-introducao: rgba(0, 0, 0, 0.1);
+  
+  --cor-botao: var(--cor-principal);
+  --cor-botao-hover: #e4583b;
+  --cor-botao-sec: var(--cor-secundaria);
+  --cor-botao-sec-hover: #8ac4d3;
+  --cor-texto-botao: #fff;
 
-    /* Cores para os Cards */
-    --cor-fundo-card: #fff;
-    --sombra-card: rgba(0, 0, 0, 0.08);
-    --sombra-hover-card: rgba(0, 0, 0, 0.15);
-    --cor-titulo-card: var(--cor-principal);
-    --cor-texto-card: #666;
-    --cor-negrito-card: #333;
+  
+  --cor-card: #fff;
+  --sombra-card: rgba(0, 0, 0, 0.08);
+  --sombra-card-hover: rgba(0, 0, 0, 0.15);
+  --cor-fundo-intro: var(--cor-principal);
+  --cor-texto-intro: #fff;
 
-    /* Cores para Botões */
-    --cor-botao-formulario: var(--cor-principal);
-    --cor-texto-botao-formulario: #fff;
-    --cor-hover-botao-formulario: #e4583b;
-    --cor-botao-secundario: var(--cor-secundaria);
-    --cor-texto-botao-secundario: #fff;
-    --cor-hover-botao-secundario: #8ac4d3;
+  
+  --cor-fundo-rodape: #333;
+  --cor-texto-rodape: #eee;
 
-    /* Cores para o Rodapé */
-    --cor-fundo-rodape: #333;
-    --cor-texto-rodape: #eee;
-
-    /* Fontes */
-    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --fonte-secundaria: 'Arial', sans-serif;
-
-    /* Outros Valores */
-    --borda-arredondada: 8px;
-    --espacamento-padrao: 15px;
+  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --borda: 8px;
+  --espaco: 15px;
 }
 
-/* Estilos Gerais */
 body {
-    font-family: var(--fonte-principal);
-    margin: 0;
-    padding: 0;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-    box-sizing: border-box;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: var(--borda-arredondada);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: var(--cor-principal);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-h3 {
-    color: var(--cor-titulo-card);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: var(--espacamento-padrao);
-}
-
-a {
-    text-decoration: none;
-    color: var(--cor-link);
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--cor-link-hover);
+  font-family: var(--fonte-principal);
+  margin: 0;
+  padding: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  box-sizing: border-box;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: var(--borda-arredondada);
-    margin-bottom: 10px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--borda);
+  margin-bottom: 10px;
 }
 
-/* Introdução */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: var(--borda);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: var(--cor-principal);
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h3 {
+  color: var(--cor-principal);
+  margin: 0 0 10px;
+}
+
+
+p {
+  margin-bottom: var(--espaco);
+}
+
+a {
+  color: var(--cor-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--cor-link-hover);
+}
+
 .introducao {
-    background-color: var(--cor-fundo-introducao);
-    color: var(--cor-texto-introducao);
-    padding: 40px;
-    margin-bottom: 40px;
-    border-radius: var(--borda-arredondada);
-    box-shadow: var(--sombra-introducao);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+  background: var(--cor-fundo-intro);
+  color: var(--cor-texto-intro);
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: var(--borda);
+  box-shadow: rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .introducao-conteudo {
-    flex: 1;
-    text-align: left;
+  flex: 1;
+  text-align: left;
 }
 
 #logo {
-    font-size: 2.5em;
-    margin-bottom: var(--espacamento-padrao);
-    text-align: left;
+  font-size: 2.5em;
+  margin-bottom: var(--espaco);
+  text-align: left;
 }
 
-.introducao .mensagem-boas-vindas {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 20px;
+.mensagem-boas-vindas {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .introducao p {
-    font-size: 1em;
-    line-height: 1.7;
-    margin-bottom: 20px;
+  font-size: 1em;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-.cta-adote {
-    margin-top: 30px;
+.introd-adote {
+  margin-top: 30px;
 }
 
 .botao-principal {
-    display: inline-block;
-    background-color: var(--cor-principal);
-    color: var(--cor-texto-botao-formulario);
-    padding: 15px 30px;
-    border-radius: var(--borda-arredondada);
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background: var(--cor-botao);
+  color: var(--cor-texto-botao);
+  padding: 15px 30px;
+  border-radius: var(--borda);
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .botao-principal:hover {
-    background-color: var(--cor-hover-botao-formulario);
+  background: var(--cor-botao-hover);
 }
 
 .link-doe {
-    color: var(--cor-principal);
-    text-decoration: underline;
+  color: var(--cor-principal);
+  text-decoration: underline;
 }
 
 .link-doe:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .introducao-imagem {
-    flex-shrink: 0;
-    border-radius: var(--borda-arredondada);
-    overflow: hidden;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: var(--borda);
 }
 
-/* Nossa Missão - Carousel */
+
 .nossa-missao {
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.carousel-missao {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
 
-.carousel-missao::-webkit-scrollbar {
-    display: none;
-}
-
-.card-missao {
-    background-color: var(--cor-fundo-card);
-    border-radius: var(--borda-arredondada);
-    padding: 20px;
-    box-shadow: 0 2px 4px var(--sombra-card);
-    min-width: 250px;
-    text-align: center;
-}
-
-.card-missao i {
-    font-size: 2em;
-    color: var(--cor-principal);
-    margin-bottom: var(--espacamento-padrao);
-}
-
-.card-missao h3 {
-    color: var(--cor-principal);
-    margin-bottom: 10px;
-}
-
-/* Pets para Adoção */
-.pets-para-adocao {
-    padding: 30px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.pet-cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.pet-card {
-    background-color: var(--cor-fundo-card);
-    border-radius: var(--borda-arredondada);
-    padding: 20px;
-    box-shadow: 0 2px 4px var(--sombra-card);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    text-align: center;
-}
-
-.pet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px var(--sombra-hover-card);
-}
-
-.pet-card .descricao {
-    color: var(--cor-texto-card);
-    margin-bottom: 12px;
-}
-
-.pet-card strong {
-    font-weight: bold;
-    color: var(--cor-negrito-card);
-}
-
-.botao-adocao {
-    display: inline-block;
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto-botao-secundario);
-    padding: 10px 20px;
-    border-radius: var(--borda-arredondada);
-    font-weight: bold;
-    margin-top: var(--espacamento-padrao);
-    transition: background-color 0.3s ease;
-}
-
-.botao-adocao:hover {
-    background-color: var(--cor-hover-botao-secundario);
-}
-
-/* Link para Adoção */
-.link-para-adocao {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: var(--cor-fundo-destaque);
-    border-radius: var(--borda-arredondada);
-}
-
-.link-para-adocao p {
-    font-size: 1.1em;
-}
-
-/* Rodapé */
 .rodape {
-    background-color: var(--cor-fundo-rodape);
-    color: var(--cor-texto-rodape);
-    text-align: center;
-    padding: 20px;
-    border-radius: 0 0 var(--borda-arredondada) var(--borda-arredondada);
+  background: var(--cor-fundo-rodape);
+  color: var(--cor-texto-rodape);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: var(--borda);
 }
 
 .links-rodape {
-    margin-bottom: var(--espacamento-padrao);
+  margin-bottom: 10px;
 }
 
 .links-rodape a {
-    color: var(--cor-texto-rodape);
-    margin: 0 10px;
+  color: var(--cor-texto-rodape);
+  margin: 0 10px;
 }
 
 .links-rodape a:hover {
-    text-decoration: underline;
+  color: var(--cor-secundaria);
 }
 
-.rodape p {
-    font-size: 0.9em;
-    margin-bottom: 0;
+/* Carrossel Missão */
+.carousel-missao,
+.pet-cards-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
 }
 
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-    .introducao {
-        flex-direction: column;
-        text-align: center;
-    }
+.card-missao,
+.carousel-pet {
+  background: var(--cor-card);
+  border-radius: var(--borda);
+  box-shadow: 0 2px 6px var(--sombra-card);
+  padding: 20px;
+  min-width: 240px;
+  flex-shrink: 0;
+  text-align: left;
+}
 
-    .introducao-conteudo {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.carousel-pet img {
+  max-height: 180px;
+  object-fit: cover;
+}
 
-    #logo {
-        text-align: center;
-    }
-
-    .pet-cards-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+.descricao p strong {
+  color: var(--cor-negrito-card);
 }
