@@ -1,205 +1,325 @@
 :root {
-    
+    /* Cores Principais */
+    --cor-principal: #f47c57; /* Laranja vibrante */
+    --cor-secundaria: #a8dadc; /* Azul claro */
+    --cor-terciaria: #457b9d; /* Azul mais escuro */
+    --cor-fundo: #f9f9f9;
+    --cor-fundo-destaque: #e0fbfc; /* Azul bem claro para seções de destaque */
+    --cor-texto: #333;
+    --cor-texto-secundario: #555;
+    --cor-link: #457b9d;
+    --cor-link-hover: #1d3557;
+    --cor-alerta: #e63946;
+    --cor-sucesso: #2a9d8f;
+
+    /* Cores para a Introdução */
+    --cor-fundo-introducao: var(--cor-principal);
+    --cor-texto-introducao: #fff;
+    --sombra-introducao: rgba(0, 0, 0, 0.1);
+
+    /* Cores para os Cards */
+    --cor-fundo-card: #fff;
+    --sombra-card: rgba(0, 0, 0, 0.08);
+    --sombra-hover-card: rgba(0, 0, 0, 0.15);
+    --cor-titulo-card: var(--cor-principal);
+    --cor-texto-card: #666;
+    --cor-negrito-card: #333;
+
+    /* Cores para Botões */
+    --cor-botao-formulario: var(--cor-principal);
+    --cor-texto-botao-formulario: #fff;
+    --cor-hover-botao-formulario: #e4583b;
+    --cor-botao-secundario: var(--cor-secundaria);
+    --cor-texto-botao-secundario: #fff;
+    --cor-hover-botao-secundario: #8ac4d3;
+
+    /* Cores para o Rodapé */
+    --cor-fundo-rodape: #333;
+    --cor-texto-rodape: #eee;
+
+    /* Fontes */
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --cor-texto: #000000;
-    --cor-container: #df6831;
-    --cor-borda-introducao: #eee;
+    --fonte-secundaria: 'Arial', sans-serif;
 
-/* Processo Adoção */
-    --cor-titulo-procedimentos: #000000; /*como adotar */
-    --cor-processo-adocao: #ffffff;
-    --cor-borda-processo-adocao: #eee;
-    --cor-texto-processo-adocao: #494545;
-    --cor-lista-processo-adocao: #000000;
-
-
-/* PET-CARD */
-    --cor-card-pet: #fff;
-    --sombra-card-pet: rgba(19, 104, 126, 0.05);
-    --cor-nome-card-pet: #000000;
-    --cor-descricao-card-pet: #2b2b2b;
-    --cor-negrito-card-pet: #000000;
-    --sombra-hover-card-pet: rgba(226, 12, 12, 0.1);
-    
-
-
-/* Formulário */
-    --cor-formulario: #fff;
-    --cor-borda-formulario: #ddd;
-    --sombra-formulario: rgba(0, 0, 0, 0.05);
-    --cor-label-formulario: #444;
-    --cor-borda-input-formulario: #ccc;
-    --cor-botao-formulario: #dd6d22;
-    --cor-hover-botao-formulario: #e00a0a;  
+    /* Outros Valores */
+    --borda-arredondada: 8px;
+    --espacamento-padrao: 15px;
 }
 
+/* Estilos Gerais */
 body {
-    font-family: var(--fonte-principal); 
+    font-family: var(--fonte-principal);
     margin: 0;
     padding: 0;
+    background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
-}
-
-#logo {
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 20px;
-    background-color: var(--cor-container);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--sombra-container);
+    padding: 30px;
+    background-color: #fff;
+    border-radius: var(--borda-arredondada);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
+h1, h2 {
+    color: var(--cor-principal);
     text-align: center;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--cor-titulo-card);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: var(--espacamento-padrao);
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-link);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-link-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--borda-arredondada);
+    margin-bottom: 10px;
 }
 
 /* Introdução */
 .introducao {
+    background-color: var(--cor-fundo-introducao);
+    color: var(--cor-texto-introducao);
+    padding: 40px;
     margin-bottom: 40px;
-    text-align: center;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid var(--cor-borda-introducao);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-introducao);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.introducao-conteudo {
+    flex: 1;
+    text-align: left;
+}
+
+#logo {
+    font-size: 2.5em;
+    margin-bottom: var(--espacamento-padrao);
+    text-align: left;
+}
+
+.introducao .mensagem-boas-vindas {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .introducao p {
-    line-height: 1.8;
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
+.cta-adote {
+    margin-top: 30px;
+}
 
+.botao-principal {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-botao-formulario);
+    padding: 15px 30px;
+    border-radius: var(--borda-arredondada);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
 
-/* Processo de Adoção */
-.processo-adocao {
+.botao-principal:hover {
+    background-color: var(--cor-hover-botao-formulario);
+}
+
+.link-doe {
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+
+.link-doe:hover {
+    text-decoration: none;
+}
+
+.introducao-imagem {
+    flex-shrink: 0;
+    border-radius: var(--borda-arredondada);
+    overflow: hidden;
+}
+
+/* Nossa Missão - Carousel */
+.nossa-missao {
+    padding: 30px;
     margin-bottom: 40px;
+    text-align: center;
+}
+
+.carousel-missao {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-missao::-webkit-scrollbar {
+    display: none;
+}
+
+.card-missao {
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--borda-arredondada);
     padding: 20px;
-    background-color: var(--cor-processo-adocao);
-    border-radius: 6px;
-    border: 1px solid var(--cor-borda-processo-adocao);
+    box-shadow: 0 2px 4px var(--sombra-card);
+    min-width: 250px;
+    text-align: center;
 }
 
-.processo-adocao h2 {
-    text-align: left;
-    margin-bottom: 15px;
+.card-missao i {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: var(--espacamento-padrao);
 }
 
-.processo-adocao p {
-    color: var(--cor-texto-processo-adocao);
-    line-height: 1.8;
-    margin-bottom: 15px;
-}
-
-.processo-adocao ol {
-    padding-left: 25px;
-    color: var(--cor-lista-processo-adocao);
-}
-
-.processo-adocao ol li {
+.card-missao h3 {
+    color: var(--cor-principal);
     margin-bottom: 10px;
-    line-height: 1.6;
 }
 
-/* Cards de Pets */
+/* Pets para Adoção */
+.pets-para-adocao {
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 .pet-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .pet-card {
-    background-color: var(--cor-card-pet);
-    border-radius: 8px;
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--borda-arredondada);
     padding: 20px;
-    box-shadow: 0 1px 3px var(--sombra-card-pet);
-    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 4px var(--sombra-card);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
 }
 
 .pet-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px var(--sombra-hover-card-pet);
+    box-shadow: 0 6px 12px var(--sombra-hover-card);
 }
 
-.pet-card h3 {
-    color: var(--cor-nome-card-pet);
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.pet-card p {
-    color: var(--cor-descricao-card-pet);
-    margin-bottom: 8px;
+.pet-card .descricao {
+    color: var(--cor-texto-card);
+    margin-bottom: 12px;
 }
 
 .pet-card strong {
     font-weight: bold;
-    color: var(--cor-negrito-card-pet);
+    color: var(--cor-negrito-card);
 }
 
-
-
-/* Formulário de Adoção */
-.formulario-adocao {
-    background-color: var(--cor-formulario);
-    border: 1px solid var(--cor-borda-formulario);
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 1px 3px var(--sombra-formulario);
-}
-
-.formulario-adocao h2 {
-    text-align: left;
-    margin-bottom: 25px;
-}
-
-.grupo-formulario {
-    margin-bottom: 20px;
-}
-
-.grupo-formulario label {
-    display: block;
-    margin-bottom: 8px;
+.botao-adocao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-botao-secundario);
+    padding: 10px 20px;
+    border-radius: var(--borda-arredondada);
     font-weight: bold;
-    color: var(--cor-label-formulario);
-}
-
-.grupo-formulario input[type="text"],
-.grupo-formulario input[type="email"],
-.grupo-formulario input[type="tel"],
-.grupo-formulario select {
-    width: calc(100% - 18px);
-    padding: 10px;
-    border: 1px solid var(--cor-borda-input-formulario);
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.grupo-formulario select {
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-    background-size: 16px;
-}
-
-.grupo-formulario button {
-    background-color: var(--cor-botao-formulario);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
+    margin-top: var(--espacamento-padrao);
     transition: background-color 0.3s ease;
 }
 
-.grupo-formulario button:hover {
-    background-color: var(--cor-hover-botao-formulario);
+.botao-adocao:hover {
+    background-color: var(--cor-hover-botao-secundario);
+}
+
+/* Link para Adoção */
+.link-para-adocao {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--cor-fundo-destaque);
+    border-radius: var(--borda-arredondada);
+}
+
+.link-para-adocao p {
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-fundo-rodape);
+    color: var(--cor-texto-rodape);
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 var(--borda-arredondada) var(--borda-arredondada);
+}
+
+.links-rodape {
+    margin-bottom: var(--espacamento-padrao);
+}
+
+.links-rodape a {
+    color: var(--cor-texto-rodape);
+    margin: 0 10px;
+}
+
+.links-rodape a:hover {
+    text-decoration: underline;
+}
+
+.rodape p {
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .introducao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .introducao-conteudo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #logo {
+        text-align: center;
+    }
+
+    .pet-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }

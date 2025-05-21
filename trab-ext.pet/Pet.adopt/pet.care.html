@@ -1,89 +1,297 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet.Adopt</title>
-    <link rel="stylesheet" href="pet.care.css">
-</head>
-<body>
-    <div class="container">
-        <h1 id="logo">Resgacti</h1>
-        <p class="mensagem-boas-vindas">Bem-vindo! Somos uma ONG dedicada a resgatar e cuidar de pets abandonados.</p>
-        <p>Somos a Resgacti. Nossa missão é dar uma segunda chance a esses animais, oferecendo-lhes abrigo, carinho e os cuidados necessários até que uma família especial os adote. Acreditamos no impacto positivo que a adoção pode ter tanto na vida dos pets quanto na vida das pessoas.</p>
-        
-        <section class="processo-adocao">
-            <h2>Como Adotar </h2>
-            <p>Adotar um pet é um ato de amor! Veja como funciona o nosso processo:</p>
-            <ol>
-                <li>Conheça nossos pets</li>
-                <li>Preencha o formulário de interesse</li>
-                <li>Entrevista com a equipe da ONG</li>
-                <li>Visita ao pet (se aplicável)</li>
-                <li>Assinatura do termo de adoção</li>
-                <li>Período de adaptação</li>
-            </ol>
-            <p>Lembre-se que a vacinação e os cuidados veterinários são essenciais...</p>
-        </section>
+:root {
+    /* Cores Principais */
+    --cor-principal: #f47c57; /* Laranja vibrante */
+    --cor-secundaria: #a8dadc; /* Azul claro */
+    --cor-terciaria: #457b9d; /* Azul mais escuro */
+    --cor-fundo: #f9f9f9;
+    --cor-fundo-destaque: #e0fbfc; /* Azul bem claro para seções de destaque */
+    --cor-texto: #333;
+    --cor-texto-secundario: #555;
+    --cor-link: #457b9d;
+    --cor-link-hover: #1d3557;
+    --cor-alerta: #e63946;
+    --cor-sucesso: #2a9d8f;
 
-        <section class="pet-cards-container">
-            <div class="pet-card">
-                <img src="img/Bruno1.avif" alt="Max" height="210" width="240">
-                <h3>Max</h3>
-                <p class="descricao">Um cãozinho adorável de porte médio...</p>
-                <p><strong>Porte:</strong> Médio</p>
-                <p><strong>Idade:</strong> Aproximadamente 6 anos</p>
-                <p><strong>Temperamento:</strong> Brincalhão, carinhoso</p>
-            </div>
-            
-            <div class="pet-card">
-                <img src="img/Mia.jpeg" alt="Mia" height="200" width="240">
-                <h3>Mia</h3>
-                <p class="descricao">Uma gatinha charmosa de porte pequeno...</p>
-                <p><strong>Porte:</strong> Pequeno</p>
-                <p><strong>Idade:</strong> Aproximadamente 8 anos</p>
-                <p><strong>Temperamento:</strong> Calma, carinhosa</p>
-            </div>
-            
-            <div class="pet-card">
-                <img src="img/thor.jpg" alt="Thor" height="200" width="240">
-                <h3>Thor</h3>
-                <p class="descricao">Um cãozinho adorável de porte médio...</p>
-                <p><strong>Porte:</strong> Médio</p>
-                <p><strong>Idade:</strong> Aproximadamente 5 anos</p>
-                <p><strong>Temperamento:</strong> Brincalhão, carinhoso</p>
-            </div>
-        </section>
+    /* Cores para a Introdução */
+    --cor-fundo-introducao: var(--cor-principal);
+    --cor-texto-introducao: #fff;
+    --sombra-introducao: rgba(0, 0, 0, 0.1);
 
-        <section class="formulario-adocao">
-            <h2>Tenho Interesse em Adotar!</h2>
-            <form action="#" method="post">
-                <div class="grupo-formulario">
-                    <label for="pet">Selecione o Pet:</label>
-                    <select id="pet" name="pet">
-                        <option value="">-- Selecione --</option>
-                        <option value="Max">Max</option>
-                        <option value="Mia">Mia</option>
-                        <option value="Thor">Thor</option>
-                    </select>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="grupo-formulario">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
-                <div class="grupo-formulario">
-                    <button type="submit">Enviar pedido de Adoção</button>
-                </div>
-            </form>
-        </section>
-    </div>
-</body>
-</html>
+    /* Cores para os Cards */
+    --cor-fundo-card: #fff;
+    --sombra-card: rgba(0, 0, 0, 0.08);
+    --sombra-hover-card: rgba(0, 0, 0, 0.15);
+    --cor-titulo-card: var(--cor-principal);
+    --cor-texto-card: #666;
+    --cor-negrito-card: #333;
+
+    /* Cores para Botões */
+    --cor-botao-formulario: var(--cor-principal);
+    --cor-texto-botao-formulario: #fff;
+    --cor-hover-botao-formulario: #e4583b;
+    --cor-botao-secundario: var(--cor-secundaria);
+    --cor-texto-botao-secundario: #fff;
+    --cor-hover-botao-secundario: #8ac4d3;
+
+    /* Cores para o Rodapé */
+    --cor-fundo-rodape: #333;
+    --cor-texto-rodape: #eee;
+
+    /* Fontes */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-secundaria: 'Arial', sans-serif;
+
+    /* Outros Valores */
+    --borda-arredondada: 8px;
+    --espacamento-padrao: 15px;
+}
+
+
+body {
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: var(--borda-arredondada);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: var(--cor-titulo-card);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: var(--espacamento-padrao);
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-link);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-link-hover);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--borda-arredondada);
+    margin-bottom: 10px;
+}
+
+.introducao {
+    background-color: var(--cor-fundo-introducao);
+    color: var(--cor-texto-introducao);
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-introducao);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+#logo {
+    font-size: 2.5em;
+    margin-bottom: var(--espacamento-padrao);
+    text-align: left;
+}
+
+.introducao .mensagem-boas-vindas {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.introducao p {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.cta-adote {
+    margin-top: 30px;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: var(--cor-texto-botao-formulario);
+    padding: 15px 30px;
+    border-radius: var(--borda-arredondada);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.botao-principal:hover {
+    background-color: var(--cor-hover-botao-formulario);
+}
+
+.link-doe {
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+
+.link-doe:hover {
+    text-decoration: none;
+}
+
+.introducao-imagem {
+    flex-shrink: 0;
+    border-radius: var(--borda-arredondada);
+    overflow: hidden;
+}
+
+.nossa-missao {
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.carousel-missao {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carousel-missao::-webkit-scrollbar {
+    display: none;
+}
+
+.card-missao {
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--borda-arredondada);
+    padding: 20px;
+    box-shadow: 0 2px 4px var(--sombra-card);
+    min-width: 250px;
+    text-align: center;
+}
+
+.card-missao i {
+    font-size: 2em;
+    color: var(--cor-principal);
+    margin-bottom: var(--espacamento-padrao);
+}
+
+.card-missao h3 {
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+
+.pets-para-adocao {
+    padding: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.pet-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.pet-card {
+    background-color: var(--cor-fundo-card);
+    border-radius: var(--borda-arredondada);
+    padding: 20px;
+    box-shadow: 0 2px 4px var(--sombra-card);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--sombra-hover-card);
+}
+
+.pet-card .descricao {
+    color: var(--cor-texto-card);
+    margin-bottom: 12px;
+}
+
+.pet-card strong {
+    font-weight: bold;
+    color: var(--cor-negrito-card);
+}
+
+.botao-adocao {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-botao-secundario);
+    padding: 10px 20px;
+    border-radius: var(--borda-arredondada);
+    font-weight: bold;
+    margin-top: var(--espacamento-padrao);
+    transition: background-color 0.3s ease;
+}
+
+
+.link-para-adocao {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--cor-fundo-destaque);
+    border-radius: var(--borda-arredondada);
+}
+
+.link-para-adocao p {
+    font-size: 1.1em;
+}
+
+.rodape {
+    background-color: var(--cor-fundo-rodape);
+    color: var(--cor-texto-rodape);
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 var(--borda-arredondada) var(--borda-arredondada);
+}
+
+
+
+@media (max-width: 768px) {
+    .introducao {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .introducao-conteudo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #logo {
+        text-align: center;
+    }
+
+    .pet-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
