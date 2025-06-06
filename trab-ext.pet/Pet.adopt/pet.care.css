@@ -137,14 +137,7 @@ a:hover {
   background: var(--cor-botao-hover);
 }
 
-.link-doe {
-  color: var(--cor-principal);
-  text-decoration: underline;
-}
 
-.link-doe:hover {
-  text-decoration: none;
-}
 
 .introducao-imagem {
   flex-shrink: 0;
